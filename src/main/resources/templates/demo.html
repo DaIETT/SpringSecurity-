@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html   xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+        lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>This is a home page.</p>
+<p>name: <span sec:authentication="name"></span></p>
+<p>Username: <span sec:authentication="principal.username"></span></p>
+<p>authorities: <span sec:authentication="principal.authorities"></span></p>
+<p>credentials: <span sec:authentication="credentials"></span></p>
+<p>remoteAddress: <span sec:authentication="details.remoteAddress"></span></p>
+<p>sessionId: <span sec:authentication="details.sessionId"></span></p>
+<br><br><br>
+<p>你是vip角色 根据角色判断 <span sec:authorize="hasRole('vip')"></span></p>
+<p>你是admin权限 根据权限判断 <span sec:authorize="hasAuthority('admin')"></span></p>
+
+</body>
+</html>
